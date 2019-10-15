@@ -16,4 +16,14 @@ AA -> 27
 AB -> 28 '''
 
 def excel_column_to_number(column):
-  return columnd
+
+  result = 0
+  
+  for index, char in enumerate(column[::-1]): 
+    base = ord(char) - 64
+   
+    result += base * (26 ** index)
+    
+  return result
+   
+print(excel_column_to_number('ZZZ'))  
